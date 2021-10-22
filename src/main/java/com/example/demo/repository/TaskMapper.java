@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Select;
 public interface TaskMapper {
 
     /**
-     * select処理 undoneのみ scheduledDate順
+     * タスクのselect処理 undoneのみ scheduledDate順
      */
     @Select("SELECT * FROM Task WHERE done = false ORDER BY " +
         "CASE " +
@@ -19,10 +19,10 @@ public interface TaskMapper {
             "WHEN scheduledDate = '' THEN '1' " +//空文字最後
             "ELSE '0' " +
         "END, scheduledDate ASC, startTime ASC")
-    public List<Task> selectUndoneTasks();
+    public List<Task> selectUndoneTasksByScheduledDate();
 
     /**
-     * select処理 undoneのみ priority順
+     * タスクのselect処理 undoneのみ priority順
      */
     @Select("SELECT * FROM Task WHERE done = false ORDER BY " +
         "CASE " +
@@ -31,5 +31,7 @@ public interface TaskMapper {
             "ELSE '0' " +
         "END, priority ASC, scheduledDate ASC")
     public List<Task> selectUndoneTasksByPriority();
+
+    
     
 }
