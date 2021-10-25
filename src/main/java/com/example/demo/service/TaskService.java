@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TaskService {
 
-    //@RequiredArgsConstructorにより以下記述のみでコンストラクタインジェクション
+    //@RequiredArgsConstructorによりコンストラクタインジェクションの記述省略
     private final TaskMapper mapper;
 
     //select1件
@@ -21,12 +21,12 @@ public class TaskService {
     	return mapper.selectOne(taskID);
     }
 
-    //select undoneのみ 予定日順　
+    //select undoneのみ scheduledDate順
     public List<Task> selectUndoneTasksByScheduledDate() {
         return mapper.selectUndoneTasksByScheduledDate();
     }
 
-    //select undone 優先度順
+    //select undone priority順
     public List<Task> selectUndoneTasksByPriority() {
         return mapper.selectUndoneTasksByPriority();
     }
@@ -34,6 +34,10 @@ public class TaskService {
     //select todayのみ
     public List<Task> selectTodayTasks() {
         return mapper.selectTodayTasks();
+    }
+
+    public List<Task> selectDoneTasks() {
+        return mapper.selectDoneTasks();
     }
 
     //新規タスク登録

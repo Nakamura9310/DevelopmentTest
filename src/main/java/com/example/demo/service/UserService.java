@@ -10,7 +10,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class UserService {
 
-    //UserMapperをコンストラクタインジェクション
+    //@RequiredArgsConstructorによりコンストラクタインジェクションの記述省略
     private final UserMapper mapper;
 
     //ユーザーのsort情報を取得
