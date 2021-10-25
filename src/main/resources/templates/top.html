@@ -30,47 +30,40 @@
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
+			<!-- Topページ、Todayページ、Doneページ へのアクセスボタン -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
 						<a class="nav-link fas fa-home" th:href="@{/top}">Top</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link fas fa-book-open" th:href="@{/today}">Today</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link fas fa-check" th:href="@{/done}">Done</a>
 					</li>
-
 				</ul>
 			</div>
-
 		</nav>
 	</header>
 
+	<!-- メインコンテンツ -->
 	<div class="container-lg">
-
 
 		<!-- タスク追加ボタン -->
 		<p style="text-align:center">
 			<a th:href="@{/new}"><button class="mt-2 btn btn-primary" autofocus>+ 新しいタスクを追加</button></a>
 		</p>
 
-
 		<!-- タスクが無い時 -->
 		<div th:if="!${task.size()}">
 			<h4 style="text-align: center;">タスクはありません<i class="fas fa-umbrella-beach"></i></h4>
 		</div>
 
-
 		<!-- タスクがある時 -->
 		<div th:if="${task.size()}" class="task-table">
 
 			<!-- sort dropdown -->
-
 			<!-- sort = dateの時 -->
 			<div th:if="${#strings.contains(sort, 'date')}">
 				<a class="btn btn-primary btn-sm dropdown-toggle mr-4" type="button" data-toggle="dropdown"
@@ -84,7 +77,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!-- sort = priorityの時 -->
 			<div th:if="${#strings.contains(sort, 'priority')}">
 				<a class="btn btn-primary btn-sm dropdown-toggle mr-4" type="button" data-toggle="dropdown"
@@ -99,8 +91,6 @@
 				</div>
 			</div>
 			<!-- sort dropdown終わり -->
-
-
 
 			<!-- タスク一覧テーブル表示 -->
 			<table class="table table-sm">
@@ -200,14 +190,10 @@
 								<button type="submit" class="btn btn-dark btn-sm far fa-trash-alt"></button>
 							</form>
 						</td>
-
 					</tr>
 				</tbody>
 			</table>
-
 		</div>
-
-
 	</div>
 
 

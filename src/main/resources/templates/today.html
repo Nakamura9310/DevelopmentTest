@@ -8,53 +8,51 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" type="text/css">
 
     <!-- MaterialBootstrapCDN(https://mdbootstrap.com/docs/b4/jquery/getting-started/cdn/) -->
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-	<!-- Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-	<!-- Bootstrap core CSS -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Material Design Bootstrap -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
 </head>
 
 <body>
     <!-- ナビゲーションバー -->
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light shadow">
-			<a class="navbar-brand text-dark" th:href="@{/top}"><strong>TaskTime</strong></a>
-			<!-- トグルボタン -->
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <a class="navbar-brand text-dark" th:href="@{/top}"><strong>TaskTime</strong></a>
+            <!-- トグルボタン -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Topページ、Todayページ、Doneページ へのアクセスボタン -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-home" th:href="@{/top}">Top</a>
+                    </li>
+                    <li class="nav-item font-weight-bold active">
+                        <a class="nav-link fas fa-book-open" th:href="@{/today}">Today</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fas fa-check" th:href="@{/done}">Done</a>
+                    </li>
+                </ul>
+            </div>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link fas fa-home" th:href="@{/top}">Top</a>
-					</li>
+        </nav>
+    </header>
 
-					<li class="nav-item font-weight-bold active">
-						<a class="nav-link fas fa-book-open" th:href="@{/today}">Today</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link fas fa-check" th:href="@{/done}">Done</a>
-					</li>
-				</ul>
-			</div>
-
-		</nav>
-	</header>
-
-
+    <!-- メインコンテンツ -->
     <div class="container-lg">
 
         <p style="text-align:center">
-			<a th:href="@{/new}"><button class="mt-2 btn btn-primary">+ 新しいタスクを追加</button></a>
-		</p>
+            <a th:href="@{/new}"><button class="mt-2 btn btn-primary">+ 新しいタスクを追加</button></a>
+        </p>
 
 
         <!-- taskが無い時 -->
@@ -65,7 +63,7 @@
         <!-- タスクがある時 -->
         <div th:if="${task.size()}" class="task-table">
 
-            
+
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -93,24 +91,28 @@
                         </td>
                         <td style="text-align: center;">
                             <a th:href="@{/edit/{taskID} (taskID=*{taskID}) }">
-                                <button type="button"class="btn btn-blue-grey btn-sm fas fa-edit"></button></a></td>
+                                <button type="button" class="btn btn-blue-grey btn-sm fas fa-edit"></button></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
-    
 
 
 
-    <!-- MaterialBootstrapCDN(https://mdbootstrap.com/docs/b4/jquery/getting-started/cdn/) -->
-	<!-- JQuery -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+        <!-- MaterialBootstrapCDN(https://mdbootstrap.com/docs/b4/jquery/getting-started/cdn/) -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 
 </body>

@@ -29,29 +29,25 @@
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
+			<!-- Topページ、Todayページ、Doneページ へのアクセスボタン -->
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
 						<a class="nav-link fas fa-home" th:href="@{/top}">Top</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link fas fa-book-open" th:href="@{/today}">Today</a>
 					</li>
-
 					<li class="nav-item">
 						<a class="nav-link fas fa-check" th:href="@{/done}">Done</a>
 					</li>
-
 				</ul>
 			</div>
-
 		</nav>
 	</header>
 
 
-
+	<!-- メインコンテンツ -->
 	<div class="container-lg">
 
 		<h2 class="p-3 bg-white text-center">タスク編集画面</h2>

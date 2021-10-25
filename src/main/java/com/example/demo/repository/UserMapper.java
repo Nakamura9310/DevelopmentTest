@@ -8,10 +8,11 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface UserMapper {
 
+    //ユーザーのsortを取得(date or priority)
     @Select("SELECT sort FROM User")
     public String selectSort();
     
-    //ログイン中のユーザーのsortをdateかpriorityに更新
+    //ユーザーのsortをdateかpriorityに更新
     @Update("UPDATE User SET sort = #{sort}")
     public void updateUserSort(@Param("sort") String sort);
 }

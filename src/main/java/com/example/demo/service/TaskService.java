@@ -16,7 +16,7 @@ public class TaskService {
     //@RequiredArgsConstructorによりコンストラクタインジェクションの記述省略
     private final TaskMapper mapper;
 
-    //select1件
+    //select 1件
     public Task selectOne(int taskID) {
     	return mapper.selectOne(taskID);
     }
@@ -26,7 +26,7 @@ public class TaskService {
         return mapper.selectUndoneTasksByScheduledDate();
     }
 
-    //select undone priority順
+    //select undoneのみ priority順
     public List<Task> selectUndoneTasksByPriority() {
         return mapper.selectUndoneTasksByPriority();
     }
@@ -36,6 +36,7 @@ public class TaskService {
         return mapper.selectTodayTasks();
     }
 
+    //select doneのみ
     public List<Task> selectDoneTasks() {
         return mapper.selectDoneTasks();
     }
@@ -60,7 +61,7 @@ public class TaskService {
         mapper.undone(taskID);
     }
 
-    //delete処理
+    //delete 1件
     public void deleteTask(int taskID) {
         mapper.deleteTask(taskID);
     }

@@ -34,10 +34,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-	//Bootstrap 使用
-    implementation 'org.webjars:jquery:3.6.0'
-	implementation 'org.webjars:bootstrap:5.0.0'  
 }
 
 test {

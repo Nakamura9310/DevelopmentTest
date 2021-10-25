@@ -13,8 +13,7 @@ public class User {
     //ユーザー識別用のID
     private int userID;
 
-    //タスクをソートする方法を格納
-    //日付順(date)か優先度順(priority)
+    //タスクをソートする方法 日付順(date)か優先度順(priority)
     private String sort;
 
     
