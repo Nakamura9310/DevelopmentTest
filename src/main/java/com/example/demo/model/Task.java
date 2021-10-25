@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
@@ -13,6 +14,10 @@ public class Task {
     //タスク名 重複可能
     @NotBlank(message = "タスク名を入力してください")
     private String taskName;
+
+    //タスクの見積所要時間
+	@Digits(integer = 1, fraction = 1, message="整数部1桁、小数部1桁で入力してください")
+	private double estimatedTime;
 
     //タスクの実行予定日
     @NotBlank(message = "予定日を入力してください")

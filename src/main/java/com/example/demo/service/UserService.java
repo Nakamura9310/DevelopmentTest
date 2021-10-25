@@ -18,5 +18,10 @@ public class UserService {
         return mapper.selectSort();
     }
 
+    //ログイン中のユーザーのsortをdateかpriorityに更新
+    public void updateUserSort(String sort) {
+        mapper.updateUserSort(sort);
+    }
+
     
 }
